@@ -7,6 +7,8 @@ export const registerUser = async (data) => {
 
 export const loginUser = async (data) => {
   const response = await api.post('/auth/login/', data)
+  localStorage.setItem('token', response.data.token)
+  console.log(response.data)
   return response.data
 }
 

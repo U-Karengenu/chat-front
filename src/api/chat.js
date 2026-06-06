@@ -32,3 +32,7 @@ export const sendMessage = async (roomId, text) => {
   const response = await api.post(`/chats/msg/${roomId}/`, { text })
   return response.data
 }
+
+export const sendFileMessage = async (roomId, file) => {
+  const res = await api.post(`/chats/msg/${roomId}/`, {file})
+}
